@@ -9,7 +9,7 @@
 </head>
 <body>
     <header id ="header">
-        <div>Time Remaining: <span id = "time"></span></div>
+        <div>Time Remaining: <p id = "time"></p></div>
     </header>
 
     <section id = "quiz-start" class = "box">
@@ -22,7 +22,7 @@
         </div>
     </section>
     <section>
-        <div hidden id = "question-card" class = "box">
+        <div id = "question-card" class = "box">
             <h3 id = "question-info"></h3>
             <div id = "quiz-buttons">
                 <button id="choice0" class="button"></button> 
@@ -36,7 +36,7 @@
     </section>
     <section>
         <div id = "score" class = "box">
-            <h3>Good Work! Your final score is: <span id = "final-score"></span></h3>
+            <h3>Good Work! Your final score is: <p id = "final-score"></p></h3>
             <form class = "score-form" id = "submission">
                 <label for = "initials">Please enter your initials to record your highscore!</label>
                 <input type="text" id = "initials">
