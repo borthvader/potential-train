@@ -5,10 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed Javascript Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <header>
-        <time>Time Remaining: <span id="time'> </span> </time>
+    <header id ="header">
+        <div>Time Remaining: <span id = "time"></span></div>
     </header>
+
+    <section id = "quiz-start" class = "box">
+        <div id = "info">
+            <h1 id = "title">My Timed Quiz</h1>
+            <p>Welcome to my Javascript Quiz. This game will ask you some simple questions related to basic Javascript terminolgy and record your score at the end as a value of your time remaining. Keep in mind that each wrong answer will deduct 10 seconds from your time remaining.           
+            </p>
+            <button id= "start-quiz" class = "button">Start Quiz!</button>
+
+        </div>
+    </section>
+    <section>
+        <div hidden id = "question-card" class = "box">
+            <h3 id = "question-info"></h3>
+            <div id = "quiz-buttons">
+                <button id="choice0" class="button"></button> 
+                <button id="choice1" class="button"></button> 
+                <button id="choice2" class="button"></button> 
+                <button id="choice3" class="button"></button>  
+            </div>
+            <div id = "result">
+                <p id = "result-msg"></p>
+            </div>
+    </section>
+    <section>
+        <div id = "score" class = "box">
+            <h3>Good Work! Your final score is: <span id = "final-score"></span></h3>
+            <form class = "score-form" id = "submission">
+                <label for = "initials">Please enter your initials to record your highscore!</label>
+                <input type="text" id = "initials">
+                <button id = "confirm-button" class = "button">Confirm</button>
+            </form>   
+        </div>
+    </section>
+    <section>
+        <div id="leaderboard" class = "box">
+            <h3>Highscore Leaderboard</h3>
+            <ol id = "score-list"></ol>
+        </div>
+    </section>
+
+<script async src="./assets/script.js"></script>
 </body>
+
 </html>
