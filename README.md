@@ -17,7 +17,7 @@ Here you can find a link to the deployed application : [Website](https://borthva
 
 ## Credits
 
-The primary material was sourced from [GitLab]
+The primary material was sourced from [GitLab](https://utoronto.bootcampcontent.com/utoronto-bootcamp/UTOR-VIRT-FSF-FT-05-2022-U-LOLC/-/tree/main/04-Web-APIs/02-Challenge) and [StackOverflow](https://stackoverflow.com/)
 
 ## License 
 
