@@ -68,6 +68,8 @@ var timeClock = document.querySelector("#time");
 var score = document.querySelector("#final-score");
 var confirmBtn = document.querySelector("#confirm-button");
 var input = document.querySelector("#initials");
+var returnBtn = document.querySelector("#return-button");
+var resetBtn = document.querySelector("#reset-button");
 // creates global variables for timer and question number
 var intervalId;
 var time;
@@ -82,6 +84,7 @@ function hideBoxes() {
 }
 // hides all boxes except the starting message and button
 function startPage(){
+    quizStart.style.display = "block";
     questionBox.style.display = "none";
    scoreBox.style.display = "none";
    leaderboardBox.style.display = "none";
@@ -187,7 +190,19 @@ function getHighscore(){
          
         document.querySelector("#score-list").textContent = lastscore.initials + "-" + lastscore.score
        
-    } 
+    } else {
+        document.getElementById("#score-list").textContent = "Nothing to Display";
+    }
+}
+// creates the option to start over from beginning
+returnBtn.addEventListener('click', startAgain);
+function startAgain(){
+    startPage();
+}
+// clears the local storage of items
+resetBtn.addEventListener('click', resetScores);
+function resetScores(){
+    localStorage.clear();
 }
 
 
