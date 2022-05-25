@@ -6,6 +6,8 @@ This project was created with the purpose of practicing various JavaScript Eleme
 ## Usage
 
 Using the site is easy, simply follow the prompts and click the buttons to see the magic happen, below you will find  screenshots of the current deployment of the site:
+
+
 ![screenshot](./assets/screenshot%201.jpg)
 ![screenshot](./assets/screenshot%202.jpg)
 ![screenshot](./assets/screenshot%203.jpg)
