@@ -1,57 +1,57 @@
 var questions = [
     {
-        questionText: "This is question 1",
+        questionText: "Which is not a valid data type?",
         choices: [
-            "answer 1",
-            "answer 2",
-            "answer 3",
-            "answer 4",
+            "Number",
+            "String",
+            "Element",
+            "Object",
         ],
-        answer: "answer 2",
+        answer: "Element",
         questionId: 1
     },
     {
-        questionText: "This is question 2",
+        questionText: "What is the name of the following operator? ===",
         choices: [
-            "answer 1",
-            "answer 2",
-            "answer 3",
-            "answer 4",
+            "Very Equal",
+            "Slightly Equal",
+            "Strictly Equal",
+            "Maybe Equal in the future",
         ],
-        answer: "answer 2",
+        answer: "Strictly Equal",
         questionId: 2
     },
     {
-        questionText: "This is question 3",
+        questionText: "Which is not a type of pop-up availabel in JavaScript?",
         choices: [
-            "answer 1",
-            "answer 2",
-            "answer 3",
-            "answer 4",
+            "Alert",
+            "Confirm",
+            "Prompt",
+            "Cancel",
         ],
-        answer: "answer 2",
+        answer: "Cancel",
         questionId: 3
     },
     {
-        questionText: "This is question 4",
+        questionText: "Which is not a type of boolean operator?",
         choices: [
-            "answer 1",
-            "answer 2",
-            "answer 3",
-            "answer 4",
+            "&&",
+            "||",
+            "|=",
+            "!",
         ],
-        answer: "answer 2",
+        answer: "|=",
         questionId: 4
     },
     {
-        questionText: "This is question 5",
+        questionText: "Is JavaScript fun and easy to use?",
         choices: [
-            "answer 1",
-            "answer 2",
-            "answer 3",
-            "answer 4",
+            "Obviously",
+            "Depends on who you ask...",
+            "The opposite is true in fact",
+            "No comment reccieved",
         ],
-        answer: "answer 2",
+        answer: "Depends on who you ask...",
         questionId: 5
     },
 ];
@@ -80,8 +80,16 @@ function hideBoxes() {
    scoreBox.style.display = "none";
    leaderboardBox.style.display = "none";
 }
+// hides all boxes except the starting message and button
+function startPage(){
+    questionBox.style.display = "none";
+   scoreBox.style.display = "none";
+   leaderboardBox.style.display = "none";
+}
+// calls the startpage function on window load
+window.onload = startPage();
 
-
+// eventListener on the Start Quiz button to run the function
 quizStart.addEventListener("click", function(){
     hideBoxes();
     questionBox.style.display = "block";
@@ -111,7 +119,7 @@ function showQuestion(){
     var choices = question.choices;
     var questionEl = document.querySelector("#question-info");
     questionEl.textContent = question.questionText;
-
+// creates a button for each choice in the question
     for (var i = 0; i < choices.length; i++){
         var choice = choices[i];
         var choiceButton = document.querySelector("#choice" + i);
@@ -126,12 +134,12 @@ document.querySelector("#quiz-buttons").addEventListener('click', checkAnswer);
 function correctChoice(choiceButton){
     return choiceButton.textContent === questions[currentQuestion].answer;
 }
-
+// subtracts time for each incorrect answer
 function checkAnswer(eventObject){
     var choiceButton = eventObject.target;
     result.style.display = "block";
     if (correctChoice(choiceButton)) {
-        resultMsg.textContent = "You're Right!"
+        resultMsg.textContent = "You're Right!";
      } else {
          resultMsg.textContent = "Not this time!"
         if(time >= 10){
@@ -143,6 +151,7 @@ function checkAnswer(eventObject){
             finish();
         }
     }
+    // proceeds to the next question until none are left and runs the finish function
     currentQuestion++;
     if (currentQuestion < questions.length) {
         showQuestion();
@@ -150,33 +159,41 @@ function checkAnswer(eventObject){
         finish();
     }
 }
+// ends the game and displays the score 
 function finish(){
     clearInterval(intervalId);
     hideBoxes();
     scoreBox.style.display = "block";
     score.textContent = time;
 }
-// confirmBtn.addEventListener("click", saveScore)
-
-// function saveScore(event){
-//     event.preventDefault();
-//     var highscoreEl = {
-//         initials: input.value,
-//         score: time,
-//     };
-//         hideBoxes();
-//         leaderboardBox.style.display = "block";
-//         localStorage.setItem("highscoreEl", JSON.stringify(highscoreEl));
-//     renderHighscore();
+confirmBtn.addEventListener("click", saveScore)
+// creates an object from user input and stores it to localStorage as a string using JSON
+function saveScore(event){
+    event.preventDefault();
+    var highscoreEl = {
+        initials: input.value,
+        score: time,
+    };
+        hideBoxes();
+        leaderboardBox.style.display = "block";
+        localStorage.setItem("highscoreEl", JSON.stringify(highscoreEl));
+    getHighscore();
     
-// }
+}
+// retrieves the stored object and displays on the leaderboard screen
+function getHighscore(){
+    var lastscore = JSON.parse(localStorage.getItem("highscoreEl"));
+    if (lastscore !==null){
+         
+        document.querySelector("#score-list").textContent = lastscore.initials + "-" + lastscore.score
+       
+    } 
+}
 
-// function renderHighscore(){
-//     var lastscore = JSON.parse(localStorage.getitem("#score-list"));
-//     if (lastscore !==null){
-//         document.querySelector("#score-list").textContent = lastscore.initials + lastscore.score
-//     } 
-// }
+
+
+
+
 
 
 
