@@ -5,8 +5,11 @@
 This project was created with the purpose of practicing various JavaScript Elements including eventListeners, localStorage, and other function triggers. Using HTML, CSS, and JavaScript I created a basic timed quiz to test a user's knowlege of some of the items I used to create this page. User will be prompted to answer questions and at the end will have the option to record thier highscore
 ## Usage
 
-Using the site is easy, simply follow the prompts and click the buttons to see the magic happen, below you will find a screenshot of the current deployment of the site:
-![screenshot]()
+Using the site is easy, simply follow the prompts and click the buttons to see the magic happen, below you will find  screenshots of the current deployment of the site:
+![screenshot](./assets/screenshot%201.jpg)
+![screenshot](./assets/screenshot%202.jpg)
+![screenshot](./assets/screenshot%203.jpg)
+![screenshot](./assets/screenshot%204.jpg)
 
 Here you can find a link to the deployed application : [Website](https://borthvader.github.io/potential-train/)
 
